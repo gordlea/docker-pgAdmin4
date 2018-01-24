@@ -41,10 +41,10 @@ COPY entrypoint disable_logfile_when_stdout.patch /
 RUN chmod 0775 /entrypoint
 RUN patch -p0 < /disable_logfile_when_stdout.patch
 
-RUN cp /data/config; \
-        \
-        sqllite3 pgadmin4 'insert into server (user_id, servergroup_id, name, host, maintenance_db, username, password) \
-                values (1,1,\'main\',\'pgdb\',\'postgres\',\'postgres\',\'postgres\')';
+#RUN cd /data/config; \
+#        \
+#        sqllite3 pgadmin4 'insert into server (user_id, servergroup_id, name, host, maintenance_db, username, password) \
+#                values (1,1,\'main\',\'pgdb\',\'postgres\',\'postgres\',\'postgres\')';
 
 VOLUME /data
 EXPOSE ${SERVER_PORT}
