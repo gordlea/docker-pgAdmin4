@@ -24,7 +24,7 @@ LABEL   org.label-schema.name="pgAdmin4" \
         org.label-schema.version=${PGADMIN_VERSION} \
         org.label-schema.vcs-url="https://github.com/Chorss/docker-pgAdmin4"
 
-RUN apk add --no-cache --virtual .run-deps postgresql postgresql-libs openssl shadow sudo su-exec bash sudo su-exec bash sqlite3
+RUN apk add --no-cache --virtual .run-deps postgresql postgresql-libs openssl shadow sudo su-exec bash sudo su-exec bash sqlite
 RUN apk add --no-cache --virtual .build-deps gcc musl-dev openssl postgresql-dev \
  && pip3 --no-cache-dir install https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v${PGADMIN_VERSION}/pip/pgadmin4-${PGADMIN_VERSION}-py2.py3-none-any.whl \
  && apk del .build-deps \
