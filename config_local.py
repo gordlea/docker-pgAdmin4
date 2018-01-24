@@ -39,7 +39,8 @@ LANGUAGES = {
     'en': 'English',
     'zh': 'Chinese (Simplified)',
     'de': 'German',
-    'pl': 'Polish'
+    'pl': 'Polish',
+    'ru': 'Russian'
 }
 
 ##########################################################################
@@ -71,7 +72,7 @@ SERVER_MODE = os.environ['SERVER_MODE'].lower() in ("yes", "true", "1")
 # or testing. Production installations should be run as a WSGI application
 # behind Apache HTTPD.
 # DEFAULT_SERVER = '127.0.0.1'
-DEFAULT_SERVER = int(os.environ['SERVER_HOST'])
+DEFAULT_SERVER = 0.0.0.0
 
 # The default port on which the app server will listen if not set in the
 # environment by the runtime
@@ -212,3 +213,9 @@ SESSION_DB_PATH = os.path.join(DATA_DIR, 'sessions')
 STORAGE_DIR = os.path.join(DATA_DIR, 'storage')
 LOG_FILE = os.path.join(DATA_DIR, 'logs/pgadmin4.log')
 SQLITE_PATH = os.path.join(DATA_DIR, 'config/pgadmin4.db')
+
+DEFAULT_BINARY_PATHS = {
+    "pg":   "/usr/bin",
+    "ppas": "",
+    "gpdb": ""
+}
